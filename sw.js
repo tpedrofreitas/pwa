@@ -1,6 +1,6 @@
 
 
-const cacheName = "ola-pwa";
+const cacheName = "ola-pwa-v1";
 
 var filesToCache = [
     './',
