@@ -13,23 +13,40 @@ var filesToCache = [
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(cacheName)
-            .then(cache =>
-                cache.addAll(filesToCache)
-            )
+            .then(cache => {
+                return cache.addAll(filesToCache);
+            })
+    );
+    self.skipWaiting();
+});
+
+self.addEventListener('active', event => {
+    event.waitUntil(
+        self.clients.claim()
     );
 });
 
 self.addEventListener('fetch', event => {
+
     event.respondWith(
         caches.match(event.request)
             .then(response => {
-                return response ||
-                    fetch(event.request);
-            }
 
-            )
+                
+                if (response) {
+                    return response;
+                }
+
+            
+                return fetch(event.request);
+
+            })
     );
+
 });
+
+
+
 
 
 
