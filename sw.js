@@ -1,4 +1,4 @@
-const { cache } = require("react");
+
 
 const cacheName = "ola-pwa";
 
@@ -20,7 +20,7 @@ self.addEventListener('install', event => {
     self.skipWaiting();
 });
 
-self.addEventListener('active', event => {
+self.addEventListener('activate', event => {
     event.waitUntil(
         self.clients.claim()
     );
@@ -32,12 +32,12 @@ self.addEventListener('fetch', event => {
         caches.match(event.request)
             .then(response => {
 
-                
+
                 if (response) {
                     return response;
                 }
 
-            
+
                 return fetch(event.request);
 
             })
