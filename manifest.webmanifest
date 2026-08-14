@@ -1,0 +1,32 @@
+{
+    "name": "Olá Mundo",
+    "short_name": "Olá",
+    "start_url": ".",
+    "theme_color": "#ffffff",
+    "display": "standalone",
+    "background-color": "#000000",
+    "description": "Página de Olá Mundo!!!",
+    "lang": "pt-BR",
+    "icons": [
+        {
+            "src": "imagens/ola-mundo-128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "imagens/ola-mundo-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "imagens/ola-mundo-256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "imagens/ola-mundo-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
